@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Docker volume data
+.data/
+
+#Local environment
+.env
