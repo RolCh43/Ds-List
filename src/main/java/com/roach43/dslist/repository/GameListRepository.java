@@ -6,6 +6,4 @@ import com.roach43.dslist.model.GameList;
 
 public interface GameListRepository extends JpaRepository<GameList, Long> {
 
-    // Additional query methods can be defined here if needed
-
 }

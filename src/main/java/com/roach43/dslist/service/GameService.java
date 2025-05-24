@@ -12,10 +12,10 @@ import com.roach43.dslist.repository.GameRepository;
 
 @Service
 public class GameService {
-
+  
     @Autowired
     private GameRepository gameRepository;
-
+    
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll(){
         return gameRepository.findAll().stream()
@@ -29,4 +29,12 @@ public class GameService {
                 .map(GameDTO::new)
                 .orElseThrow(()-> new RuntimeException("Game not found"));
     }
+
+     @Transactional(readOnly = true)
+        public List<GameMinDTO> findByList(long listId){
+        return gameRepository.searchByList(listId).stream()
+            .map(GameMinDTO::new)
+            .toList();
 }
+}
+
